@@ -92,22 +92,26 @@ int main(void)
     node_list *current_list = NULL;
     node_list *new_list = NULL;
 
+    /* Create a linked list of random values */
     for(i=0; i<max; i++)
     {
         if(i == 0)
         {
+            /* start the list */
             start_list = malloc(sizeof(node_list));
             start_list->val = rand()%10;
             current_list = start_list;
         }
         else
         {
+            /* new_list creates the next node in the list, set the next pointer in current node to the new_list */
             new_list = malloc(sizeof(node_list));
             new_list->val = rand()%10;
             current_list->next = new_list;
             current_list = new_list;
         }
     }
+    // close the list
     new_list->next = NULL;
 
     current_list = start_list;
