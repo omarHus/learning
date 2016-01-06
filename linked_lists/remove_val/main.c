@@ -108,7 +108,7 @@ int main(void)
             current_list = new_list;
         }
     }
-    current_list->next = NULL;
+    new_list->next = NULL;
 
     current_list = start_list;
     print_list(current_list);
